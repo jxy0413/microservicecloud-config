@@ -1,12 +1,12 @@
-spring :
+spring:
   profiles:
     active:
-    - dev
+      - dev
+
 ---
 
 server:
   port: 7001
-
 spring:
   profiles: dev
   application:
@@ -16,16 +16,15 @@ eureka:
   instance:
     hostname: eureka7001.com
   client:
-    register-with-eureka: false #表示不向注册中心注册自己
-    fetch-registry: false #表示自己端就是服务注册中心 不需要去检索服务
+    register-with-eureka: false
+    fetch-registry: false
     service-url:
-      defaultZone:  http://eureka7001.com:7001/eureka/
-
+      defaultZone: http://eureka7001.com:7001/eureka
 ---
 
-server:
-  port: 7002
 
+erver:
+  port: 7002
 spring:
   profiles: test
   application:
@@ -35,7 +34,7 @@ eureka:
   instance:
     hostname: eureka7001.com
   client:
-    register-with-eureka: false #表示不向注册中心注册自己
-    fetch-registry: false #表示自己端就是服务注册中心 不需要去检索服务
+    register-with-eureka: false
+    fetch-registry: false
     service-url:
-      defaultZone:  http://eureka7001.com:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka
